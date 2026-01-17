@@ -1,0 +1,11 @@
+Experiment,Architecture,Layers,Units,Optimizer,Learning_Rate,Batch_Size,Dropout,Train_RMSE,Val_RMSE,Notes
+1,LSTM(32),1,32,Adam,0.001,32,0.0,1.86,4.71,Baseline model
+2,LSTM(64),1,64,Adam,0.001,32,0.0,44.1,51.74,Increased units
+3,LSTM(64)-LSTM(32),2,"64,32",Adam,0.001,32,0.0,26.44,29.52,Stacked LSTM
+4,LSTM(64)+Dropout,1,64,Adam,0.001,32,0.2,44.14,51.94,Added dropout for regularization
+5,LSTM(128),1,128,Adam,0.001,32,0.0,35.8,40.45,Increased capacity
+6,LSTM(64),1,64,SGD,0.001,32,0.0,51.46,61.26,SGD with gradient clipping
+7,LSTM(64),1,64,RMSprop,0.001,32,0.0,53.38,62.91,RMSprop optimizer
+8,LSTM(64),1,64,Adam,0.0001,32,0.0,124.81,145.92,Lower learning rate
+9,LSTM(64),1,64,Adam,0.001,64,0.0,66.67,76.88,Larger batch size
+10,LSTM(64),1,64,Adam,0.001,16,0.0,30.3,34.58,Smaller batch size
